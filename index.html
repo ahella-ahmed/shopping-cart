@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/style1.css">
+</head>
+
+<body>
+    <header>
+
+        <div class="logo" onclick="location.reload()">
+            <i class="fas fa-bolt"></i>
+            <span>Electronics Store</span>
+        </div>
+
+
+        <form action="product-details.html" method="GET" class="search-box">
+            <input type="text" name="q" id="searchInput" placeholder="Search...">
+        </form>
+
+
+        <nav>
+            <ul>
+                <section>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="product-details.html">Products</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="feedback.html">feedback</a></li>
+                    <li><button class="mode"><i class="fa-regular fa-moon"></i></button></li>
+                </section>
+
+            </ul>
+        </nav>
+
+        <section>
+            <li style="list-style: none;">
+                <a href="cart.html" class="cart-link" aria-label="Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count">0</span>
+                </a>
+            </li>
+        </section>
+
+    </header>
+
+    <main>
+        <section class="sale-banner" id="special-sale">
+            <div class="sale-content">
+                <div class="sale-badge">Sale 15%</div>
+                <h2 id="sale-product-name">HP EliteBook 850 G7</h2>
+                <p class="old-price">30000L.E</p>
+                <p class="new-price">25000L.E</p>
+                <button class="buy-now" onclick="addToCart(1)">Add to Cart</button>
+            </div>
+            <div class="sale-image">
+                <img src="images/imag7i890o09es.png" alt="Sale Product">
+            </div>
+        </section>
+
+        <h2 class="section-title"> Best Seller 🔥</h2>
+
+        <div id="bestSellerContainer" class="cards-container"></div>
+
+        <section id="all">
+            <div id="all-products"></div>
+        </section>
+
+        <div id="laptops" style="display:none;"></div>
+        <div id="phones" style="display:none;"></div>
+        <div id="watches" style="display:none;"></div>
+        <div id="power" style="display:none;"></div>
+    </main>
+
+
+    <footer>
+        <p>© Electronics Store. All rights reserved 2026</p>
+    </footer>
+
+    <script src="script2.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

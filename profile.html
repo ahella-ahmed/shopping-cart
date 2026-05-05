@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="css/style1.css">
+</head>
+
+<body>
+    <header class="no-search">
+        <div class="logo" onclick="location.reload()">
+            <i class="fas fa-bolt"></i>
+            <span>Electronics Store</span>
+        </div>
+
+        <nav>
+            <ul>
+                <section>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="product-details.html">Products</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="feedback.html">feedback</a></li>
+                    <li><button class="mode"><i class="fa-regular fa-moon"></i></button></li>
+
+                </section>
+            </ul>
+        </nav>
+
+        <section>
+            <li style="list-style: none;">
+                <a href="cart.html" class="cart-link" aria-label="Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count">0</span>
+                </a>
+            </li>
+        </section>
+    </header>
+
+    <div class="container">
+
+        <h2>Profile</h2>
+
+        <p id="name"></p>
+        <p id="email"></p>
+        <p id="address"></p>
+        <p id="governorate"></p>
+        <p id="birthday"></p>
+
+        <button onclick="logout()">
+            Logout
+        </button>
+
+    </div>
+
+    <script src="script2.js"></script>
+    <script src="script.js"></script>
+    <footer>
+        <p>© Electronics Store. All rights reserved 2026</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="css/style1.css">
+</head>
+
+<body>
+
+    <button onclick="history.back()"
+        style="position: absolute; top: 20px; left: 20px; background: #f0f0f0; border: 1px solid #ccc; border-radius: 5px; cursor: pointer; font-size: 16px; padding: 5px 15px; display: flex; align-items: center; gap: 5px;">
+        &#8592; Back
+    </button>
+
+    <h2 style="margin-top: 50px;">Cart</h2>
+
+    <div id="cartItems"></div>
+
+    <h3 id="total"></h3>
+
+    <button id="emptyCartBtn" onclick="clearCart()"
+        style="display: block; margin: 10px auto; width: max-content; background: #e74c3c; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer;">
+        Empty the Cart
+    </button>
+
+
+    <div id="checkoutForm" style="display: none; margin-top: 30px;">
+        <h2 style="font-family: 'Times New Roman', Times, serif; font-size: 24px; margin-bottom: 20px;">Checkout</h2>
+        <div style="margin-bottom: 15px;">
+            <input type="text" id="orderName" placeholder="Full name"
+                style="width: 250px; padding: 5px; border: 1px solid #777; box-sizing: border-box;" required>
+        </div>
+        <div style="margin-bottom: 15px;">
+            <input type="text" id="orderAddress" placeholder="Address"
+                style="width: 250px; padding: 5px; border: 1px solid #777; box-sizing: border-box;" required>
+        </div>
+        <div style="margin-bottom: 15px;">
+            <input type="tel" id="orderPhone" placeholder="Phone Number"
+                style="width: 250px; padding: 5px; border: 1px solid #777; box-sizing: border-box;" required>
+        </div>
+        <div style="margin-bottom: 20px;">
+            <select id="paymentMethod"
+                style="width: 250px; padding: 5px; border: 1px solid #777; box-sizing: border-box;">
+                <option value="">Select Payment Method</option>
+                <option value="cod">Cash on Delivery</option>
+                <option value="card">Credit card</option>
+                <option value="vodafone">Vodafone Cash</option>
+                <option value="instapay">Instapay</option>
+            </select>
+        </div>
+        <div style="margin-bottom: 15px;">
+            <input type="text" id="promoCode" placeholder="Promo code"
+                style="width: 250px; padding: 5px; border: 1px solid #777; box-sizing: border-box;">
+        </div>
+        <div style="margin-bottom: 20px;">
+            <button onclick="applyPromo()"
+                style="background: #efefef; color: black; border: 1px solid #777; padding: 5px 10px; cursor: pointer;">
+                Apply Promo
+            </button>
+        </div>
+        <button onclick="sendOrder()"
+            style="width: 250px; background: #2cae15; color: white; border: none; padding: 12px; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold;">
+            Send Order
+        </button>
+    </div>
+    <script src="script2.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

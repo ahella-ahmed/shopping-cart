@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products</title>
+  <link rel="stylesheet" href="css/style1.css">
+</head>
+
+<body>
+
+  <header>
+
+    <div class="logo" onclick="location.reload()">
+      <i class="fas fa-bolt"></i>
+      <span>Electronics Store</span>
+    </div>
+
+
+    <form action="product-details.html" method="GET" class="search-box">
+      <input type="text" name="q" id="searchInput" placeholder="Search...">
+    </form>
+
+
+    <nav>
+      <ul>
+        <section>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="product-details.html">Products</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="feedback.html">feedback</a></li>
+                    <li><button class="mode"><i class="fa-regular fa-moon"></i></button></li>
+
+        </section>
+
+      </ul>
+    </nav>
+
+    <section>
+      <li style="list-style: none;">
+        <a href="cart.html" class="cart-link" aria-label="Cart">
+          <i class="fas fa-shopping-cart"></i>
+          <span id="cart-count">0</span>
+        </a>
+      </li>
+    </section>
+
+  </header>
+
+  <nav class="category-nav">
+    <a href="javascript:void(0)" onclick="filterCategory('all', this)" class="active">All</a>
+    <a href="javascript:void(0)" onclick="filterCategory('laptops', this)">Laptops</a>
+    <a href="javascript:void(0)" onclick="filterCategory('phones', this)">Phones</a>
+    <a href="javascript:void(0)" onclick="filterCategory('watches', this)">Watches</a>
+    <a href="javascript:void(0)" onclick="filterCategory('power', this)">Power Banks</a>
+  </nav>
+
+  <main>
+    <section id="all">
+      <h2>All</h2>
+      <div id="all-products"></div>
+    </section>
+    <section id="laptops">
+      <h2>Laptops</h2>
+      <div id="laptops-products"></div>
+    </section>
+    <section id="phones">
+      <h2>Phones</h2>
+      <div id="phones-products"></div>
+    </section>
+    <section id="watches">
+      <h2>Watches</h2>
+      <div id="watches-products"></div>
+    </section>
+    <section id="power">
+      <h2>Power Banks</h2>
+      <div id="power-products"></div>
+    </section>
+  </main>
+
+
+
+  <div id="modal"
+    style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5);">
+    <div
+      style="background:#1a202c; color: white; margin:5% auto; padding:20px; width:90%; max-width:450px; border-radius:10px; position:relative;">
+      <button onclick="closeModal()"
+        style="position:absolute; top:10px; right:15px; font-size:24px; background:none; border:none; cursor:pointer; color: white;">&times;</button>
+      <img id="modal-img" src="" style="width:100%; height:200px; object-fit:contain;">
+      <h2 id="modal-name" style="color: white;"></h2>
+      <p id="modal-price" style="font-size:20px; color:#4a63de;"></p>
+      <table style="width:100%; border-collapse:collapse; color: white;">
+        <tbody id="modal-specs"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="script2.js"></script>
+  <script src="script.js"></script>
+  <footer>
+    <p>© Electronics Store. All rights reserved 2026</p>
+  </footer>
+</body>
+
+</html>

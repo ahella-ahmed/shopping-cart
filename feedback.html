@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Experience Center</title>
+    <link rel="stylesheet" href="css/style1.css">
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+
+<body>
+    <header class="no-search">
+        <div class="logo" onclick="location.reload()">
+            <i class="fas fa-bolt"></i>
+            <span>Electronics Store</span>
+        </div>
+
+        <nav>
+            <ul>
+                <section>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="product-details.html">Products</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="feedback.html">feedback</a></li>
+                    <li><button class="mode"><i class="fa-regular fa-moon"></i></button></li>
+
+                </section>
+            </ul>
+        </nav>
+
+        <section>
+            <li style="list-style: none;">
+                <a href="cart.html" class="cart-link" aria-label="Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count">0</span>
+                </a>
+            </li>
+        </section>
+    </header>
+
+    <div class="feedback-page-content">
+        <div class="feedback-form-card">
+            <h1>Feedback</h1>
+            
+            <form id="imageBasedFeedbackForm">
+                <div class="fb-input-group">
+                    <label>Name</label>
+                    <input type="text" id="fb-name" required>
+                </div>
+                
+                <div class="fb-input-group">
+                    <label>Email</label>
+                    <input type="email" id="fb-email" required>
+                </div>
+                
+                <div class="fb-input-group">
+                    <label>Subject</label>
+                    <input type="text" id="fb-subject" required>
+                </div>
+                
+                <div class="fb-input-group">
+                    <label>Message</label>
+                    <textarea id="fb-message" required></textarea>
+                </div>
+                
+                <button type="submit" class="fb-submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="fb-success-overlay">
+        <i class="fas fa-check-circle"></i>
+        <h2 style="color: white; margin-bottom: 10px;">Message Received!</h2>
+        <p style="color: #94a3b8; margin-bottom: 30px;">Thank you for your valuable feedback.</p>
+        <button onclick="window.location.href='feedback.html'" style="padding: 12px 60px; border-radius: 8px; border: none; background: #6366f1; color: white; cursor: pointer; font-weight: 600; width: auto; min-width: 120px;">OK</button>
+    </div>
+
+    <footer>
+        <p>© Electronics Store. All rights reserved 2026</p>
+    </footer>
+
+    <script src="script2.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('imageBasedFeedbackForm').onsubmit = function(e) {
+            e.preventDefault();
+            document.getElementById('fb-success-overlay').style.display = 'flex';
+        };
+    </script>
+</body>
+
+</html>
+
+

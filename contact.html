@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="css/style2.css">
+  <link rel="stylesheet" href="css/style1.css">
+
+</head>
+
+<body>
+  <header class="no-search">
+    <div class="logo" onclick="location.reload()">
+      <i class="fas fa-bolt"></i>
+      <span>Electronics Store</span>
+    </div>
+
+    <nav>
+      <ul>
+        <section>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="product-details.html">Products</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="feedback.html">feedback</a></li>
+                    <li><button class="mode"><i class="fa-regular fa-moon"></i></button></li>
+
+        </section>
+      </ul>
+    </nav>
+
+    <section>
+      <li style="list-style: none;">
+        <a href="cart.html" class="cart-link" aria-label="Cart">
+          <i class="fas fa-shopping-cart"></i>
+          <span id="cart-count">0</span>
+        </a>
+      </li>
+    </section>
+  </header>
+
+  <div class="form-container">
+    <h2>Contact Us</h2>
+
+    <form onsubmit="return sendData()">
+      <div class="form-group">
+        <input type="text" id="name" placeholder="Your Name" required>
+      </div>
+      <div class="form-group">
+        <input type="email" id="email" placeholder="Your Email" required>
+      </div>
+      <div class="form-group">
+        <textarea id="message" placeholder="Your Message" required></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Send</button>
+    </form>
+  </div>
+
+  <script>
+
+    window.onload = function () {
+      document.getElementById("name").value = localStorage.getItem("name") || "";
+      document.getElementById("email").value = localStorage.getItem("email") || "";
+      document.getElementById("message").value = localStorage.getItem("message") || "";
+    }
+
+    function sendData() {
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var message = document.getElementById("message").value;
+
+      if (name && email && message) {
+        localStorage.setItem("name", name);
+        localStorage.setItem("email", email);
+        localStorage.setItem("message", message);
+
+        const form = document.querySelector('form');
+        const successDiv = document.createElement('div');
+        successDiv.innerHTML = '<p style="color: #10b981; font-weight: bold; margin-top: 20px;">Your message has been sent successfully!</p>';
+        form.appendChild(successDiv);
+
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("message").value = "";
+
+        setTimeout(() => successDiv.remove(), 3000);
+
+      } else {
+        alert("Please fill all fields");
+      }
+
+      return false;
+    }
+  </script>
+  <footer>
+    <p>© Electronics Store. All rights reserved 2026</p>
+  </footer>
+  <script src="script2.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
+
+
+
