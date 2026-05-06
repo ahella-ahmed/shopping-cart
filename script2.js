@@ -60,15 +60,6 @@ const products = [
   }
 ];
 
-<<<<<<< HEAD
-let btn_mode = document.querySelector(".mode")
-
-
-btn_mode.addEventListener("click", () => {
-  document.body.classList.toggle('white')
-
-})
-=======
 if (localStorage.getItem("theme") === "white") {
   document.body.classList.add("white");
 }
@@ -85,7 +76,6 @@ if (btn_mode) {
     }
   })
 }
->>>>>>> a8acde8 (first commit)
 
 
 
@@ -286,9 +276,6 @@ showBestSellers();
 
 
 
-<<<<<<< HEAD
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-=======
 let cart = [];
 try {
   let storedCart = JSON.parse(localStorage.getItem("cart"));
@@ -298,7 +285,6 @@ try {
 } catch (e) {
   cart = [];
 }
->>>>>>> a8acde8 (first commit)
 
 function addToCart(index) {
   const product = products[index];
