@@ -60,6 +60,7 @@ const products = [
   }
 ];
 
+<<<<<<< HEAD
 let btn_mode = document.querySelector(".mode")
 
 
@@ -67,6 +68,24 @@ btn_mode.addEventListener("click", () => {
   document.body.classList.toggle('white')
 
 })
+=======
+if (localStorage.getItem("theme") === "white") {
+  document.body.classList.add("white");
+}
+
+let btn_mode = document.querySelector(".mode")
+
+if (btn_mode) {
+  btn_mode.addEventListener("click", () => {
+    document.body.classList.toggle('white')
+    if (document.body.classList.contains('white')) {
+      localStorage.setItem("theme", "white");
+    } else {
+      localStorage.removeItem("theme");
+    }
+  })
+}
+>>>>>>> a8acde8 (first commit)
 
 
 
@@ -267,7 +286,19 @@ showBestSellers();
 
 
 
+<<<<<<< HEAD
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
+=======
+let cart = [];
+try {
+  let storedCart = JSON.parse(localStorage.getItem("cart"));
+  if (Array.isArray(storedCart)) {
+    cart = storedCart;
+  }
+} catch (e) {
+  cart = [];
+}
+>>>>>>> a8acde8 (first commit)
 
 function addToCart(index) {
   const product = products[index];
